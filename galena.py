@@ -120,6 +120,7 @@ while(1):
         elif 'news' in task:
                 speak("Sure. These are the top 10 news headlines from Times of India.")
                 timesofindia()
+                speak("For more information, please visit the website of Times of India.")
         elif 'Wikipedia' in task:
                 r = sr.Recognizer()
                 my_mic = sr.Microphone(device_index=0)
@@ -156,8 +157,7 @@ while(1):
                 exit()
         elif 'capture' or 'photo' in task:
                 speak("Sure! Capturing a photo. Smile please!")
-                ecap.capture(0,"capture", "image.jpg")
-                continue 
+                ecap.capture(0,"capture", "image.jpg"
         else:
                 speak("I'm sorry, I am not programmed to do that. Please try something else.")
         r = sr.Recognizer()
