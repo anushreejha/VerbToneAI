@@ -157,7 +157,7 @@ while(1):
                 exit()
         elif 'capture' or 'photo' in task:
                 speak("Sure! Capturing a photo. Smile please!")
-                ecap.capture(0,"capture", "image.jpg"
+                ecap.capture(0,"capture", "image.jpg")
         else:
                 speak("I'm sorry, I am not programmed to do that. Please try something else.")
         r = sr.Recognizer()
