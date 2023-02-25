@@ -71,7 +71,7 @@ On giving any suitable command such as *"what's the time"* or *"tell me the time
 
 ### 6. Asking the Date:
 
-On giving any suitable command such as *"what's the date today"* or *"tell me the date"*, Galena will tell you the current current.
+On giving any suitable command such as *"what's the date today"* or *"tell me the date"*, Galena will tell you the current date.
 
 ### 7. For News Headlines: 
 
