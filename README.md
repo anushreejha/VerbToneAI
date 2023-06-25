@@ -93,8 +93,8 @@ Galena can also be used to capture a selfie for you. All you have to do is ask h
 
 When you wish to exit the program, just say *"bye"* or *"talk to you later"* to Galena and she will wish you and the program will quit. 
 
-## From the Creator
+## A Small Note
 
-Thank you for interacting with Galena! Please keep in mind, an error may arise due to poor network connection sometimes, so try to ensure a stable connection while using this program. In case of any queries, suggestion or requests, please feel free to reach out.
+Thank you for interacting with Galena! Please keep in mind, the program doesn't always deliver the expected results in case of any internet issues so kindly be patient and re-run the program if any issue occurs.
 
 #### <p align="right"> *~Anushree Jha* </p>
