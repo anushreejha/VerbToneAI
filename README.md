@@ -1,4 +1,4 @@
-# <p align="center"> Galena_The-Voice-Assistant </p>
+# <p align="center"> Galena_theVoiceAssistant </p>
 
 ## Aim of the Project 
 
