@@ -1,22 +1,16 @@
 # <p align="center"> Galena_theVoiceAssistant </p>
 
-## Aim of the Project 
-
-This project was built to create a voice assistant, which interacts with you to perform basic tasks based on the commands you give.
-
 ## About *Galena*
 
-Galena is your personal voice assistant, which is capable of understanding your commands through speech and interacting with you through speech. 
-
-When a user gives a command, Galena knows what to do by recognizing the appropriate key words used by the user. 
+Galena is a voice assistant, capable of understanding commands through speech and providing relevant responses. 
 
 ## Prerequisites for Using Galena
 
-### 1. A Stable Internet Connection:
-Among the different tasks it can perform, Galena uses speech recognition and your browser for various tasks it needs to perform, which requires a stable internet connection. Lack of fast and stable internet deteriorates performance and may lead to malfunctioning. 
+### 1. Reliable Internet Connectivity:
+For its operations, Galena relies on speech recognition and utilizes your browser. This mandates a steady and uninterrupted internet connection. Inadequate speed or stability may result in reduced performance or operational issues.
 
-### 2. In-built Microphone or Sound Recognition:
-Galena needs to hear your voice in order to function which requires your system to have an in-built microphone or sound recognition system. Note that the index number for speech detection through the microphone may need to be changed in the code for your system.
+### 2. Functional Microphone/Sound Recognition:
+In order to operate effectively, Galena relies on audio input. This necessitates the presence of either an in-built microphone or a functional sound recognition system in your device. Please note that the index number for speech detection via the microphone may require adjustment in the code to suit your specific system.
 
 ### 3. Libraries to be installed and/or imported:
 The following Python libraries must be installed and/or imported:
@@ -51,15 +45,15 @@ The following are the functions Galena can perform and the guidelines for the sa
 
 ### 1. To Start Using Galena:
 
-Galena will start interacting with you as soon as you run the program, based on your internet speed. Just run the program and you're good to go!
+Galena will start interacting with you as soon as you run the program. Note that performance will depend on internet speed. 
 
 ### 2. Searching on Google:
 
-Galena understands any suitable command such as *"search in google"* or simply *"google"* and will further ask you about what you would like to search. On answering, you would be redirected to your browser and the search results would appear.
+Galena understands any suitable command such as *"search in google"* or simply *"google"* and will further ask you what you want to search. On answering, you would be redirected to your browser and the search results would appear.
 
 ### 3. Opening YouTube:
 
-Saying any phrase or command containing *"open YouTube"* will redirect you to the YouTube home page in your browser.
+Saying any phrase or command which includes *"open YouTube"* will redirect you to the YouTube home page in your browser.
 
 ### 4. Opening Gmail:
 
@@ -67,34 +61,30 @@ Any phrase or command containing *"open Gmail"* will redirect you to your Gmail 
 
 ### 5. Asking the Time: 
 
-On giving any suitable command such as *"what's the time"* or *"tell me the time"*, Galena will tell you the current time.
+On giving any suitable command such as *"What's the time"* or *"Tell me the time"*, Galena will tell you the current time.
 
 ### 6. Asking the Date:
 
-On giving any suitable command such as *"what's the date today"* or *"tell me the date"*, Galena will tell you the current date.
+On giving any suitable command such as *"What's the date today"* or *"Tell me the date"*, Galena will tell you the current date.
 
 ### 7. For News Headlines: 
 
-Asking for anything along the line of *"what's the current news"* or *"tell me the latest news"* will cause Galena to tell you the current top ten headlines from the Times of India website.
+Ask for anything along the lines of *"What's the current news"* or *"Tell me the latest news"* to get the current top ten headlines from the Times of India website.
 
 ### 8. Searching on Wikipedia: 
 
-In order to search for something on Wikipedia, all you need to do is ask Galena something like *"search on Wikipedia"* or *"look up on Wikipedia"*. Galena will then ask you about what you would like to search for and upon replying, you will be given the search results.
+To search on Wikipedia, all you need to do is ask Galena something like *"Search on Wikipedia"* or *"Look up on Wikipedia"*. Galena will then ask you about what you would like to search for and upon replying, you will be given the search results.
 
 ### 9. Asking Galena about the Things She Can Do
 
-If you ask Galena, *"what can you do"* or *"can you do this"*, Galena will tell you the things she can do and as she says further, please feel free to reach out if you would like to suggest any more things for Galena to do. 
+If you ask Galena, *"What can you do"* or *"Can you do this"*, Galena will tell you the things she can do and as she goes further, please feel free to reach out if you would like to suggest any more things for Galena to do. 
 
 ### 10. Clicking a Photo
 
-Galena can also be used to capture a selfie for you. All you have to do is ask her, *"capture a pic"* or *"click a photo"* and she will tell you to smile and your picture will be clicked and saved with the name "image" as a '.jpg' file.
+Galena can also be used to capture a selfie for you. All you have to do is ask her, *"Capture a pic"* or *"Click a photo"* and she will tell you to smile and your picture will be clicked and saved with the name "image" as a '.jpg' file.
 
 ### 11. Ending the Program
 
-When you wish to exit the program, just say *"bye"* or *"talk to you later"* to Galena and she will wish you and the program will quit. 
-
-## A Small Note
-
-Thank you for interacting with Galena! Please keep in mind, the program doesn't always deliver the expected results in case of any internet issues so kindly be patient and re-run the program if any issue occurs.
+When you wish to exit the program, just say *"Bye"* or *"Talk to you later"* to Galena and she will wish you and the program will quit. 
 
 #### <p align="right"> *~Anushree Jha* </p>
