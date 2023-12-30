@@ -30,7 +30,6 @@ This project uses various Python libraries and dependencies. All the required pa
 
 To install these dependencies, run the following command:
 
-```bash
 pip install -r requirements.txt
 
 <p align="right"> *~Anushree Jha* </p>
