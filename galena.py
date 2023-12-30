@@ -55,7 +55,7 @@ def process_query(query):
     elif "search" in query:
         search_query = query.split("search", 1)[1].strip()  
         google_search(search_query)
-    elif "bye" or "end" in query:
+    elif "bye" or "exit" in query:
         bye()
     else:
         speak("Sorry, I cannot handle that request.")
