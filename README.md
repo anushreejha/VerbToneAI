@@ -4,7 +4,7 @@
 
 VerbToneAI is a Python-based voice assistant designed to execute diverse tasks using voice commands. Leveraging speech recognition, natural language processing (NLP), and other libraries, this assistant aims to interact with users seamlessly.
 
-## Key Features
+# Key Features
 
 ### Voice-Controlled Operations
 - **Speech Recognition:** Utilizes speech recognition libraries to interpret user voice commands.
@@ -27,7 +27,7 @@ VerbToneAI is a Python-based voice assistant designed to execute diverse tasks u
 ### Exit Command
 - **Seamless Interaction Termination:** Users can end the interaction using commands like "Bye" or "Exit."
 
-## Usage
+# Usage
 
 The voice assistant accepts various commands:
 
@@ -39,7 +39,7 @@ The voice assistant accepts various commands:
 - **"Search for \<query\>"**
 - **"Bye"** or **"Exit"** to end the interaction.
 
-## Installation and Dependencies
+# Installation and Dependencies
 
 This project utilizes various Python libraries and dependencies listed in the `requirements.txt` file. To install these dependencies, use the following command:
 
@@ -47,7 +47,7 @@ This project utilizes various Python libraries and dependencies listed in the `r
 pip install -r requirements.txt
 
 ```
-## Future Enhancements
+# Future Enhancements
 
 - **Advanced NLP Integration:** Plan to integrate advanced NLP models for sentiment analysis or intent recognition.
 
