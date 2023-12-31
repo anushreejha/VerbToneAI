@@ -10,9 +10,15 @@ Galena is a Python-based voice assistant designed to perform various tasks using
 
 **App Launcher:** Open applications on different operating systems.
 
+**Email Sending:** Send emails by voice command.
+
+**Weather Information:** Obtain current weather conditions or temperature for a specific location.
+
+**Time and Date:** Retrieve the current time or date.
+
 **Web Searches:** Conduct web searches effortlessly.
 
-**Time and Date:** Retrieve the current time or day.
+**Exit Command:** Use "Bye" or "Exit" to end the interaction.
 
 ## Usage
 
