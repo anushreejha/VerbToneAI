@@ -23,6 +23,8 @@ def speak(audio):
 SCOPES = ['https://www.googleapis.com/auth/gmail.send']
 os.environ['CREDS_FILE'] = '/Users/anushreejha/Desktop/Programming/pythonProj/galena/creds.json'
 
+nlp = pipeline("sentiment-analysis")
+
 def create_message(sender, to, subject, message_text):
     message = MIMEMultipart()
     message['to'] = to
@@ -140,8 +142,6 @@ def speak_weather():
 def bye():
     speak("Goodbye! Have a nice day!")
     exit(0)
-
-nlp = pipeline("sentiment-analysis")
 
 def process_query(query):
     if "open" in query:
