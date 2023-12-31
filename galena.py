@@ -6,11 +6,63 @@ from gtts import gTTS
 import os
 import subprocess
 import platform
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from google_auth_oauthlib.flow import InstalledAppFlow
+from google.auth.transport.requests import Request
+from googleapiclient.discovery import build
+from google.oauth2.credentials import Credentials
+
+SCOPES = ['https://www.googleapis.com/auth/gmail.send']
 
 def speak(audio):
     tts = gTTS(text=audio, lang='en')
     tts.save("output.mp3")
     os.system("afplay output.mp3")  # Adjust this command (based on your OS) for playing the audio
+
+def create_message(sender, to, subject, message_text):
+    message = MIMEMultipart()
+    message['to'] = to
+    message['from'] = sender
+    message['subject'] = subject
+    msg = MIMEText(message_text)
+    message.attach(msg)
+    return {'raw': message.as_string()}
+
+def send_message(service, user_id, message):
+    try:
+        message = service.users().messages().send(userId=user_id, body=message).execute()
+        print('Message Id: %s' % message['id'])
+        return message
+    except Exception as e:
+        print('An error occurred: %s' % e)
+        return None
+    
+def authenticate_and_send_email():
+    creds = None
+    token_path = 'token.json'  
+
+    if os.path.exists(token_path):
+        creds = Credentials.from_authorized_user_file(token_path)
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        else:
+            creds_file = os.environ.get('CREDS_FILE')
+            flow = InstalledAppFlow.from_client_secrets_file(creds_file, SCOPES)
+            creds = flow.run_local_server(port=0)
+        with open(token_path, 'w') as token:
+            token.write(creds.to_json())
+
+    service = build('gmail', 'v1', credentials=creds)
+    
+    sender_email = input("Please enter your email address: ")
+    receiver_email = input("Please enter the receiver's email address: ")
+    subject = input("Please enter the email subject: ")
+    body = input("Please enter the email body: ")
+
+    message = create_message(sender_email, receiver_email, subject, body)
+    send_message(service, 'me', message)
 
 def open_app(app_name):
     system = platform.system().lower()
@@ -48,6 +100,9 @@ def process_query(query):
         app_name = query.split("open", 1)[1].strip()
         open_app(app_name)
         speak("App opened")
+    elif "email" or "mail" in query:
+        authenticate_and_send_email()
+        speak("Email sent successfully!")
     elif "time" in query:
         tell_time()
     elif "day" in query:

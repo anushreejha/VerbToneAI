@@ -19,6 +19,7 @@ Galena is a Python-based voice assistant designed to perform various tasks using
 The voice assistant accepts various commands:
 
 - "Open <app_name>"
+- "Send an email" or "Please mail" (or something similar)
 - "What's the time?" or "Tell me the time" (or something similar)
 - "What day is it?" or "Tell me the date today" (or something similar)
 - "Search for <query>"

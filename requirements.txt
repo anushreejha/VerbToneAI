@@ -1,3 +1,4 @@
 speech_recognition==3.10.1
 transformers==4.36.2
 gtts==2.5.0
+google-api-python-client==2.111.0

@@ -1,17 +1,12 @@
-
 __pycache__/
 *.py[cod]
 *$py.class
-
 output.mp3
-
 virtual_env/
-
 .DS_Store
 .idea/
 .vscode/
 *.sublime-*
-
 logs/
 *.log
 *.swp
