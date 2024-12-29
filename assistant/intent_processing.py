@@ -2,7 +2,7 @@ import json
 from assistant.response_generation import speak
 from utils.web_search import google_search
 from utils.weather import speak_weather
-from utils.news_fetcher import timesofindia
+from utils.news_fetcher import get_news
 from utils.time_date_util import tell_time, tell_day
 from assistant.email_module import send_email
 
@@ -27,7 +27,7 @@ def process_query(query):
     elif any(word in query for word in INTENTS["weather"]):
         speak_weather()
     elif any(word in query for word in INTENTS["news"]):
-        timesofindia()
+        get_news()
     elif any(word in query for word in INTENTS["email"]):
         speak("Please enter the details.")
         sender_email = input("\nEnter sender's email address: \n")

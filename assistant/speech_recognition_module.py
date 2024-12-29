@@ -19,7 +19,7 @@ def listen_to_user(recognizer, microphone, timeout=10, pause_threshold=1.0):
         except sr.WaitTimeoutError:
             speak("I didn't hear anything. Please try again.")
         except sr.UnknownValueError:
-            speak("Sorry, I didn't catch that. Could you repeat?")
+            speak("Sorry, I didn't catch that. Please give me a moment before you can repeat that.")
         except sr.RequestError as e:
             speak(f"Sorry, I couldn't process your speech. Error: {e}")
 
