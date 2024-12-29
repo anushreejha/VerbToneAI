@@ -4,8 +4,8 @@ from email.mime.text import MIMEText
 from utils.google_service import create_service  
 from configs.credentials_manager import get_google_creds_file
 
-# Set up credentials and scopes
-CLIENT_SECRET_FILE = get_google_creds_file()  # Path to your credentials file
+# Set the credentials and scopes
+CLIENT_SECRET_FILE = get_google_creds_file()  
 API_NAME = 'gmail'
 API_VERSION = 'v1'
 SCOPES = ['https://mail.google.com/']
@@ -15,17 +15,16 @@ service = create_service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 
 def send_email(to_email, subject, message_body):
     """
-    Sends an email via the Gmail API using OAuth2.
-    This function sends the email when called.
+    This function sends the email via Gmail API using OAuth2.
     """
     try:
-        # Create the email message
+        # Create the email 
         mimeMessage = MIMEMultipart()
         mimeMessage['to'] = to_email
         mimeMessage['subject'] = subject
         mimeMessage.attach(MIMEText(message_body, 'plain'))
 
-        # Encode the email message to base64
+        # Encode the email (base 64)
         raw_string = base64.urlsafe_b64encode(mimeMessage.as_bytes()).decode()
 
         # Send the email via the Gmail API

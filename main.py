@@ -6,13 +6,13 @@ from assistant.response_generation import speak
 if __name__ == "__main__":
     r = sr.Recognizer()
     mic = sr.Microphone()
-    speak("Hello! How may I assist you?")
+    speak("Hello! Welcome to VerbTone AI.")
 
     while True:
         try:
             user_input = listen_to_user(r, mic)
             if user_input:
-                print(f"User said: {user_input}")
+                print(f"\nUser said: {user_input}")
                 process_query(user_input.lower())
         except Exception as e:
             speak(f"An error occurred: {str(e)}")

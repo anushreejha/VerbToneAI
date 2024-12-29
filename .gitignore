@@ -12,12 +12,10 @@ ENV/
 env/
 venv.bak/
 
-# IDE / Editor settings
+# IDE settings
 .vscode/
-.idea/
-*.swp
 
-# Operating system files
+# OS files
 .DS_Store
 Thumbs.db
 
@@ -26,17 +24,17 @@ Thumbs.db
 *.out
 *.err
 
-# Token and credentials
-token.json
+# Tokens and credentials
+token_gmail_v1.pickle
 creds.json
 
-# Output files
+# Output files (mp3)
 *.mp3
 output.mp3
 
-# Test files
+# Any test files
 *.test.py
 
-# Miscellaneous
+# Other
 *.bak
 *.tmp

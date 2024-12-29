@@ -6,14 +6,14 @@ from utils.news_fetcher import timesofindia
 from utils.time_date_util import tell_time, tell_day
 from assistant.email_module import send_email
 
-# Load intents from the JSON file
+# Load intents 
 with open("intents.json", "r") as f:
     INTENTS = json.load(f)
 
 def process_query(query):
     query = query.lower()
 
-    # Greetings and exit commands
+    # Greetings
     if any(word in query for word in INTENTS["greetings"]):
         speak("Hello! How may I help you today?")
         return
@@ -21,7 +21,6 @@ def process_query(query):
         speak("Goodbye! Have a great day.")
         exit()
 
-    # Specific commands
     if any(word in query for word in INTENTS["search"]):
         search_query = query.split("search", 1)[1].strip()
         google_search(search_query)

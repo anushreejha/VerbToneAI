@@ -1,17 +1,16 @@
-import pickle
-import os
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
+import os
+import pickle
 from google.auth.transport.requests import Request
 
 def create_service(client_secret_file, api_name, api_version, *scopes):
-    """
-    Authenticates the user and creates a service object to interact with Google APIs.
-    """
+    print(client_secret_file, api_name, api_version, scopes, sep='-')
     CLIENT_SECRET_FILE = client_secret_file
     API_SERVICE_NAME = api_name
     API_VERSION = api_version
     SCOPES = [scope for scope in scopes[0]]
+    print(SCOPES)
 
     cred = None
     pickle_file = f'token_{API_SERVICE_NAME}_{API_VERSION}.pickle'
@@ -24,17 +23,18 @@ def create_service(client_secret_file, api_name, api_version, *scopes):
         if cred and cred.expired and cred.refresh_token:
             cred.refresh(Request())
         else:
+            # OAuth flow runs on port 10000
             flow = InstalledAppFlow.from_client_secrets_file(CLIENT_SECRET_FILE, SCOPES)
-            cred = flow.run_local_server(port=0)
+            cred = flow.run_local_server(port=10000)  # Fixed port
 
         with open(pickle_file, 'wb') as token:
             pickle.dump(cred, token)
 
     try:
         service = build(API_SERVICE_NAME, API_VERSION, credentials=cred)
-        print(f"{API_SERVICE_NAME} service created successfully")
+        print(API_SERVICE_NAME, 'Service created successfully.')
         return service
     except Exception as e:
-        print('Unable to connect to the API service.')
+        print('Unable to connect.')
         print(e)
         return None

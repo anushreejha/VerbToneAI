@@ -1,10 +1,10 @@
 {
-  "greetings": ["hello", "hi", "hey", "good morning", "good evening"],
-  "exit": ["bye", "exit", "quit", "goodbye"],
-  "news": ["news", "headlines", "current events"],
+  "greetings": ["hello", "hi", "hey", "good morning", "good evening", "good afternoon"],
+  "exit": ["bye", "exit", "quit", "goodbye", "close", "end"],
+  "news": ["news", "headlines", "current events", "current affairs"],
   "weather": ["weather", "temperature", "forecast"],
   "time": ["time", "what's the time"],
-  "day": ["day", "what day is it"],
+  "day": ["day", "what day is it", "date"],
   "search": ["search", "google", "look up"],
   "email": ["email", "send email", "mail"]
 }
