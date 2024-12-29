@@ -52,3 +52,21 @@ pip install -r requirements.txt
 - **Advanced NLP Integration:** Plan to integrate advanced NLP models for sentiment analysis or intent recognition.
 
 - **Improved Contextual Understanding:** Enhance assistant's responses by considering conversation context for more coherent interactions.
+
+
+# VerbToneAI
+A voice-activated virtual assistant built with Python, leveraging advanced NLP models like Hugging Face transformers and Whisper for seamless human-computer interaction.
+
+## Features
+- Voice recognition and response
+- Sentiment analysis using Hugging Face
+- Weather updates, news headlines, and Google searches
+- Email automation via Gmail API
+- System application control
+- Customizable and modular codebase
+
+## Setup
+1. Clone the repository.
+2. Install dependencies: `pip install -r requirements.txt`.
+3. Add your Google credentials to `configs/creds.json`.
+4. Run `main.py`.

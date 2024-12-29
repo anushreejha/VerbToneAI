@@ -1,13 +1,42 @@
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-output.mp3
-virtual_env/
-.DS_Store
-.idea/
+
+# Environment files
+.env
+*.env
+*.venv
+venv/
+ENV/
+env/
+venv.bak/
+
+# IDE / Editor settings
 .vscode/
-*.sublime-*
-logs/
-*.log
+.idea/
 *.swp
-*.swo
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+*.out
+*.err
+
+# Token and credentials
+token.json
+creds.json
+
+# Output files
+*.mp3
+output.mp3
+
+# Test files
+*.test.py
+
+# Miscellaneous
+*.bak
+*.tmp

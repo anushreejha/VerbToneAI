@@ -1,0 +1,10 @@
+{
+  "greetings": ["hello", "hi", "hey", "good morning", "good evening"],
+  "exit": ["bye", "exit", "quit", "goodbye"],
+  "news": ["news", "headlines", "current events"],
+  "weather": ["weather", "temperature", "forecast"],
+  "time": ["time", "what's the time"],
+  "day": ["day", "what day is it"],
+  "search": ["search", "google", "look up"],
+  "email": ["email", "send email", "mail"]
+}
