@@ -18,7 +18,7 @@ def listen_to_user(r, mic):
 import speech_recognition as sr
 from assistant.response_generation import speak
 
-def listen_to_user(recognizer, microphone, timeout=12, pause_threshold=2.0):
+def listen_to_user(recognizer, microphone, timeout=10, pause_threshold=1.0):
     """
     Listens to the user via the microphone and returns the recognized text.
 

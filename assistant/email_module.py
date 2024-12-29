@@ -1,27 +1,37 @@
-from email.mime.text import MIMEText
+import base64
 from email.mime.multipart import MIMEMultipart
-from google_auth_oauthlib.flow import InstalledAppFlow
-from google.auth.transport.requests import Request
-from googleapiclient.discovery import build
-from google.oauth2.credentials import Credentials
+from email.mime.text import MIMEText
+from utils.google_service import create_service  
+from configs.credentials_manager import get_google_creds_file
 
-SCOPES = ['https://www.googleapis.com/auth/gmail.send']
+# Set up credentials and scopes
+CLIENT_SECRET_FILE = get_google_creds_file()  # Path to your credentials file
+API_NAME = 'gmail'
+API_VERSION = 'v1'
+SCOPES = ['https://mail.google.com/']
 
-def create_message(sender, to, subject, message_text):
-    message = MIMEMultipart()
-    message['to'] = to
-    message['from'] = sender
-    message['subject'] = subject
-    message.attach(MIMEText(message_text))
-    return {'raw': message.as_string()}
+# Create the Gmail service using the Create_Service function
+service = create_service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 
-def send_message(service, user_id, message):
+def send_email(to_email, subject, message_body):
+    """
+    Sends an email via the Gmail API using OAuth2.
+    This function sends the email when called.
+    """
     try:
-        message = service.users().messages().send(userId=user_id, body=message).execute()
-        print('Message Id:', message['id'])
-    except Exception as e:
-        print('An error occurred:', str(e))
+        # Create the email message
+        mimeMessage = MIMEMultipart()
+        mimeMessage['to'] = to_email
+        mimeMessage['subject'] = subject
+        mimeMessage.attach(MIMEText(message_body, 'plain'))
 
-def authenticate_and_send_email():
-    # Authentication and email sending logic
-    pass
+        # Encode the email message to base64
+        raw_string = base64.urlsafe_b64encode(mimeMessage.as_bytes()).decode()
+
+        # Send the email via the Gmail API
+        message = service.users().messages().send(userId='me', body={'raw': raw_string}).execute()
+
+        print(f'Email sent successfully: {message}')
+
+    except Exception as e:
+        print(f'An error occurred: {e}')

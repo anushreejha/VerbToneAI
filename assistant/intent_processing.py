@@ -4,7 +4,7 @@ from utils.web_search import google_search
 from utils.weather import speak_weather
 from utils.news_fetcher import timesofindia
 from utils.time_date_util import tell_time, tell_day
-from assistant.email_module import authenticate_and_send_email
+from assistant.email_module import send_email
 
 # Load intents from the JSON file
 with open("intents.json", "r") as f:
@@ -30,7 +30,11 @@ def process_query(query):
     elif any(word in query for word in INTENTS["news"]):
         timesofindia()
     elif any(word in query for word in INTENTS["email"]):
-        authenticate_and_send_email()
+        speak("Please enter the details.")
+        sender_email = input("\nEnter sender's email address: \n")
+        subject = input("\nEnter the subject: \n")
+        message = input("\nEnter the message: \n")
+        send_email(sender_email, subject, message)
     elif any(word in query for word in INTENTS["time"]):
         tell_time()
     elif any(word in query for word in INTENTS["day"]):
