@@ -2,7 +2,7 @@
 
 To be updated soon ...
 
-<! 
+
 # About
 
 VerbToneAI is a Python-based voice assistant designed to execute diverse tasks using voice commands. Leveraging speech recognition, natural language processing (NLP), and other libraries, this assistant aims to interact with users seamlessly.
