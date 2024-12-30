@@ -1,77 +1,77 @@
-# <p align="center"> VerbToneAI </p>
+# VerbTone AI 
 
-To be updated soon ...
+VerbTone is an interactive AI assistant designed to perform various tasks such as voice-based interaction, providing real-time weather and news updates, managing time and dates, writing emails, and now enhanced with features like emotion detection and advanced NLP capabilities.
 
-<! 
-# About
+## **Features**
 
-VerbToneAI is a Python-based voice assistant designed to execute diverse tasks using voice commands. Leveraging speech recognition, natural language processing (NLP), and other libraries, this assistant aims to interact with users seamlessly.
+### Core Functionalities:
+- **Wake-Word Detection**: Activates only when triggered by phrases like "Hey VerbTone," "Hello," or similar greetings.
+- **Weather Updates**: Provides real-time weather information powered by the OpenWeatherMap API.
+- **News Headlines**: Fetches the latest top news headlines using the NewsAPI.
+- **Intent Classification**: Advanced NLP using Hugging Face’s GPT-2 for understanding and processing user commands accurately.
+- **Speech-to-Text & Text-to-Speech**:
+  - Converts speech to text for user commands.
+  - Responds with voice output.
+- **Basic Utility Commands**:
+  - Tell the time, date and day.
+  - Provide greetings.
+  - Perform Google searches.
+  - Write and send emails.
+  - Provide weather predictions.
+  - Read out news headlines.
 
-# Key Features
+### Advanced Features:
+- **Emotion Detection** (New):
+  - Detects user emotions through facial expressions or speech tone.
+  - Customizes responses based on the detected emotional state (e.g., happy, angry, sad).
+- **Session Continuity** (New):
+  - Engages in continuous interaction without requiring repeated wake-word usage.
+  - Automatically resets to listening for the wake word after 15 seconds of inactivity.
+- **Natural Language Processing (NLP)**:
+  - Leverages Hugging Face’s GPT-2 for query understanding and intent classification, ensuring accurate and context-aware responses.
 
-### Voice-Controlled Operations
-- **Speech Recognition:** Utilizes speech recognition libraries to interpret user voice commands.
+---
 
-### App Launcher
-- **Cross-Platform App Opening:** Enables users to launch applications across different operating systems using voice commands.
+## **Installation Instructions**
 
-### Email Sending
-- **Voice-Activated Email Composition:** Allows users to compose and send emails through voice commands.
+### Prerequisites:
+1. Python 3.8 or higher.
+2. To see the required libraries, refer to `requirements.txt`.
 
-### Weather Information
-- **Current Weather Retrieval:** Fetches real-time weather conditions or temperature for specified locations.
+### Steps:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/YourUsername/VerbToneAI.git
+   cd VerbToneAI
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Obtain API key for weather data:
+   - Get an API key for [OpenWeatherMap](https://openweathermap.org/api).
 
-### Time and Date
-- **Time and Date Retrieval:** Provides the current time or date upon user request.
+4. Run the application:
+   ```bash
+   python main.py
+   ```
 
-### Web Searches
-- **Effortless Web Queries:** Conducts web searches based on user prompts.
+---
 
-### Exit Command
-- **Seamless Interaction Termination:** Users can end the interaction using commands like "Bye" or "Exit."
+## **Usage**
 
-# Usage
+1. Start the assistant by saying a greeting like "Hey VerbTone" or "Hello."
+2. Interact with the assistant using commands such as:
+   - "What's the weather like today?"
+   - "Tell me the latest news."
+   - "What time is it?"
+   - "Can you write an email for me?"
 
-The voice assistant accepts various commands:
+---
 
-- **"Open \<app_name\>"**
-- **"Send an email"** or **"Please mail"**
-- **"How's the weather today"** or **"Tell me the temperature outside"**
-- **"What's the time?"** or **"Tell me the time"**
-- **"What day is it?"** or **"Tell me the date today"**
-- **"Search for \<query\>"**
-- **"Bye"** or **"Exit"** to end the interaction.
+## **Future Enhancements**
+- Add support for multi-language interactions.
+- Enhance emotion detection to include more nuanced emotional states.
+- Expand integration with other APIs for advanced productivity tools.
+- Introduce conversational memory for better context retention.
 
-# Installation and Dependencies
-
-This project utilizes various Python libraries and dependencies listed in the `requirements.txt` file. To install these dependencies, use the following command:
-
-```bash
-pip install -r requirements.txt
-
-```
-# Future Enhancements
-
-- **Advanced NLP Integration:** Plan to integrate advanced NLP models for sentiment analysis or intent recognition.
-
-- **Improved Contextual Understanding:** Enhance assistant's responses by considering conversation context for more coherent interactions.
-
-
-# VerbToneAI
-A voice-activated virtual assistant built with Python, leveraging advanced NLP models like Hugging Face transformers and Whisper for seamless human-computer interaction.
-
-## Features
-- Voice recognition and response
-- Sentiment analysis using Hugging Face
-- Weather updates, news headlines, and Google searches
-- Email automation via Gmail API
-- System application control
-- Customizable and modular codebase
-
-## Setup
-1. Clone the repository.
-2. Install dependencies: `pip install -r requirements.txt`.
-3. Add your Google credentials to `configs/creds.json`.
-4. Run `main.py`.
-
->
