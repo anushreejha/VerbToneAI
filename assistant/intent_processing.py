@@ -7,46 +7,39 @@ from utils.time_date_util import tell_time, tell_day, tell_date
 from assistant.email_module import send_email
 from assistant.general_processing import process_with_local_nlp
 
-
-# Load intents 
+# Load intents
 with open("intents.json", "r") as f:
     INTENTS = json.load(f)
-
 
 def process_query(query):
     """
     Processes the user's spoken query and triggers the appropriate response.
 
-    This function analyzes the input query and determines the appropriate action, such as:
-    - Greeting the user
-    - Performing a Google search
-    - Fetching news
-    - Sending an email
-    - Reporting the current time, date or day
+    This function combines JSON-based intent matching with ML-powered intent classification.
 
     Args:
-        query (str): The query input by the user (in lowercase).
-
+        None
+    
     Returns:
         None
     """
     query = query.lower()
 
+    # Check for JSON-based intent matches
     if any(word in query for word in INTENTS["greetings"]):
         speak("Hello! How may I help you today?")
-        return
 
     elif any(word in query for word in INTENTS["exit"]):
         speak("Goodbye! Have a great day.")
         exit()
 
-    if any(word in query for word in INTENTS["search"]):
+    elif any(word in query for word in INTENTS["search"]):
         search_query = query.split("search", 1)[1].strip()
         google_search(search_query)
-
+ 
     elif any(word in query for word in INTENTS["weather"]):
         speak_weather()
-
+        
     elif any(word in query for word in INTENTS["news"]):
         get_news()
 
@@ -67,7 +60,7 @@ def process_query(query):
         tell_date()
 
     else:
-        # Handle general queries 
+        # Handle general queries with GPT-2
         speak("Let me think...")
         nlp_response = process_with_local_nlp(query)
         speak(nlp_response)

@@ -11,3 +11,7 @@ google-auth-httplib2
 torch
 tensorflow
 transformers
+scikit-learn
+pyttsx3   
+fer
+moviepy
