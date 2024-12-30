@@ -7,7 +7,7 @@ VerbTone is an interactive AI assistant designed to perform various tasks such a
 ### Core Functionalities:
 - **Wake-Word Detection**: Activates only when triggered by phrases like "Hey VerbTone," "Hello," or similar greetings.
 - **Weather Updates**: Provides real-time weather information powered by the OpenWeatherMap API.
-- **News Headlines**: Fetches the latest top news headlines using the NewsAPI.
+- **News Headlines**: Fetches the latest top news headlines from India Today by web scraping.
 - **Intent Classification**: Advanced NLP using Hugging Face’s GPT-2 for understanding and processing user commands accurately.
 - **Speech-to-Text & Text-to-Speech**:
   - Converts speech to text for user commands.
