@@ -1,10 +1,41 @@
 {
-  "greetings": ["hello", "hi", "hey", "good morning", "good evening", "good afternoon"],
-  "exit": ["bye", "exit", "quit", "goodbye", "close", "end"],
-  "news": ["news", "headlines", "current events", "current affairs"],
-  "weather": ["weather", "temperature", "forecast"],
-  "time": ["time", "what's the time"],
-  "day": ["day", "what day is it", "date"],
-  "search": ["search", "google", "look up"],
-  "email": ["email", "send email", "mail"]
+  "greetings": [
+    "hello", "hi", "hey", "good morning", "good evening", "good afternoon", 
+    "what's up", "howdy", "yo", "sup", "hi there", "greetings", "how are you"
+  ],
+  "exit": [
+    "bye", "exit", "quit", "goodbye", "close", "end", "see you", "later", 
+    "take care", "I'm done", "log off", "shut down", "sign off"
+  ],
+  "news": [
+    "news", "headlines", "current events", "current affairs", "latest news", 
+    "what's happening", "top stories", "what's new", "breaking news", "news update"
+  ],
+  "weather": [
+    "weather", "temperature", "forecast", "what's the weather", "how's the weather", 
+    "is it raining", "is it hot today", "weather update", "how's the temperature", 
+    "is it cold outside"
+  ],
+  "time": [
+    "time", "what's the time", "what time is it", "tell me the time", "current time", 
+    "can you tell me the time", "do you know the time", "what is the time now"
+  ],
+  "day": [
+    "day", "what day is it", "what's the day", "what day of the week", 
+    "can you tell me the day", "which day is it", "is it today", "what's today's day"
+  ],
+  "date": [
+    "date", "today's date", "what's the date", "what is the date", "current date", 
+    "can you tell me the date", "what's the date today", "give me the date"
+  ],
+  "search": [
+    "search", "google", "look up", "find", "search for", "search on google", 
+    "can you search", "look it up", "find something", "google this", 
+    "can you look up", "search the web"
+  ],
+  "email": [
+    "email", "send email", "mail", "send a message", "compose email", 
+    "write an email", "send a letter", "email someone", "send an email to", 
+    "I want to send an email", "can you email", "write a message"
+  ]
 }
