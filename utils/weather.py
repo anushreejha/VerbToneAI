@@ -1,57 +1,82 @@
 import requests
-from bs4 import BeautifulSoup
+import os
+from dotenv import load_dotenv
 from assistant.response_generation import speak
+
 
 def get_weather(city):
     """
-    Fetches weather data for the specified city by scraping the AccuWeather website.
+    Fetches the current weather information for a specified city from the WeatherAPI.
 
-    Parameters:
-        city (str): Name of the city to get the weather for.
+    This function retrieves weather data (temperature, condition, humidity, and
+    feels-like temperature) for the specified city. It handles exceptions if there is an error 
+    during the API request or data parsing.
+
+    Args:
+        city (str): The name of the city for which the weather data is to be fetched.
 
     Returns:
-        str: A string with the weather information (temperature, conditions, etc.).
+        weather_info (str): A string containing the current weather information for the city.
+
+    Raises:
+        Exception: If an error occurs during the API request or data retrieval.
     """
-    # Search URL for the city's weather on AccuWeather
-    url = f"https://www.accuweather.com/en/search-locations?query={city}"
-    response = requests.get(url)
+    load_dotenv()
+    
+    # Retrieve the weather API key from the environment variable
+    key = os.getenv("WEATHER_API_KEY")
+    
+    # WeatherAPI endpoint for current weather, replace with '/forecast.json' for predictions
+    url = 'http://api.weatherapi.com/v1/current.json'
+    
+    query = {
+        "key": key,  
+        "q": city
+    }
 
-    if response.status_code != 200:
-        return "Sorry, I couldn't retrieve weather details right now."
-
-    # Parse the page with BeautifulSoup
-    soup = BeautifulSoup(response.text, 'html.parser')
-
-    # Search for the first result (city weather page link)
-    city_url = soup.find('a', class_='search-result')  # You may need to inspect the page for correct class
-    if not city_url:
-        return "Sorry, I couldn't find the city you mentioned."
-
-    # Construct the full URL for the city's weather page
-    city_weather_url = "https://www.accuweather.com" + city_url['href']
-    weather_response = requests.get(city_weather_url)
-
-    if weather_response.status_code != 200:
-        return "Sorry, I couldn't retrieve the detailed weather information."
-
-    # Parse the city weather page
-    weather_soup = BeautifulSoup(weather_response.text, 'html.parser')
-
-    # Extract weather details like temperature and condition
     try:
-        temperature = weather_soup.find('span', class_='temp').text.strip()
-        condition = weather_soup.find('div', class_='phrase').text.strip()
-        weather_info = f"The current temperature in {city} is {temperature} with {condition}."
-    except AttributeError:
-        weather_info = "Sorry, I couldn't retrieve the weather details."
+        response = requests.get(url, params=query)
+        response.raise_for_status()  
+        
+        data = response.json()
+        
+        # Extract weather details from the response
+        temp_c = data['current']['temp_c']
+        condition = data['current']['condition']['text']
+        humidity = data['current']['humidity']
+        feelslike_c = data['current']['feelslike_c']
+        
+        weather_info = (f"The current temperature in {city} is {temp_c}°C. "
+                        f"The weather condition is '{condition}'. "
+                        f"Humidity is {humidity}%. "
+                        f"It feels like {feelslike_c}°C.")
 
-    return weather_info
+        return weather_info
+
+    except Exception as e:
+        speak("An error occurred. Please try again later.")
+        print(f"Error occurred: {e}")
+        return None
+
 
 def speak_weather():
     """
-    Asks the user for their city and speaks the current weather.
+    Prompts the user to enter a city name and then fetches and speaks the current weather.
+
+    This function asks the user for their city, retrieves the weather information for that city 
+    using the `get_weather()` function, and then speaks the weather information aloud.
+
+    Args:
+        None
+
+    Returns:
+        None
     """
     speak("Please enter your city.")
     city = input("Enter city: ")
     weather_info = get_weather(city)
-    speak(weather_info)
+    
+    if weather_info:
+        speak(weather_info)
+    else:
+        speak("Sorry, I could not fetch the weather information.")

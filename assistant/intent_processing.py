@@ -21,7 +21,7 @@ def process_query(query):
     - Performing a Google search
     - Fetching news
     - Sending an email
-    - Reporting the current time or day
+    - Reporting the current time, date or day
 
     Args:
         query (str): The query input by the user (in lowercase).
@@ -31,7 +31,6 @@ def process_query(query):
     """
     query = query.lower()
 
-    # Greetings
     if any(word in query for word in INTENTS["greetings"]):
         speak("Hello! How may I help you today?")
         return

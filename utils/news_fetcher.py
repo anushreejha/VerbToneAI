@@ -21,14 +21,11 @@ def get_news():
     speak("Fetching the latest news headlines from India Today...")
 
     try:
-        # Fetch the web page content
         response = requests.get("https://www.indiatoday.in/news.html")
         response.raise_for_status()
 
-        # Parse the HTML content using BeautifulSoup
         soup = BeautifulSoup(response.text, 'html.parser')
 
-        # Locate the div element containing the news headlines
         news_div = soup.find("div", class_="NewsList_newslist__1Bh2x newslist")
         if not news_div:
             raise ValueError("News container not found on the page.")
@@ -42,6 +39,5 @@ def get_news():
                 speak(text)
 
     except Exception as e:
-        # Handle any errors that occur during the scraping or speaking 
         speak("Sorry, there was an error fetching the news.")
         print(f"Error: {e}")

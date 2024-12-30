@@ -13,6 +13,5 @@ def google_search(query):
         None: This function only opens the search results in the browser.
     """
     speak("Searching on Google...")
-
-    # Open the Google search results page for the given query
+    
     webbrowser.open(f"https://www.google.com/search?q={query}")
