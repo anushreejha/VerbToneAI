@@ -5,6 +5,7 @@ from utils.weather import speak_weather
 from utils.news_fetcher import get_news
 from utils.time_date_util import tell_time, tell_day, tell_date
 from assistant.email_module import send_email
+from assistant.general_processing import process_with_local_nlp
 
 
 # Load intents 
@@ -66,4 +67,7 @@ def process_query(query):
         tell_date()
 
     else:
-        speak("Sorry, I didn't understand that request.")
+        # Handle general queries 
+        speak("Let me think...")
+        nlp_response = process_with_local_nlp(query)
+        speak(nlp_response)
