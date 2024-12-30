@@ -3,7 +3,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from utils.google_service import create_service
 from configs.credentials_manager import get_google_creds_file
-
+from assistant.response_generation import speak
 
 # Set the credentials and scopes
 CLIENT_SECRET_FILE = get_google_creds_file()
@@ -47,6 +47,7 @@ def send_email(to_email, subject, message_body):
         message = service.users().messages().send(userId='me', body={'raw': raw_string}).execute()
 
         print(f'Email sent successfully: {message}')
+        speak("Email sent successfully.")
 
     except Exception as e:
         print(f'An error occurred: {e}')

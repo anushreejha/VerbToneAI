@@ -15,20 +15,16 @@ if __name__ == "__main__":
     r = sr.Recognizer()
     mic = sr.Microphone()
 
-    # Welcome message
     speak("Hello! Welcome to VerbTone AI.")
 
     while True:
         try:
-            # Listen for user input
             user_input = listen_to_user(r, mic)
 
             if user_input:
                 print(f"\nUser said: {user_input}")
-                # Process query based on user input
                 process_query(user_input.lower())
 
         except Exception as e:
-            # If any error occurs, speak the error message
             speak(f"An error occurred: {str(e)}")
             break

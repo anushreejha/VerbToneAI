@@ -28,7 +28,6 @@ def listen_to_user(recognizer, microphone, timeout=10, pause_threshold=1.0):
         speak("What can I help you with?")
 
         try:
-            # Listen to the user's input and process the audio
             audio = recognizer.listen(source, timeout=timeout)
             user_input = recognizer.recognize_google(audio)
             return user_input
