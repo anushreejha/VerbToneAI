@@ -1,9 +1,18 @@
 import webbrowser
 from assistant.response_generation import speak
 
+
 def google_search(query):
     """
-    This function displays the Google search results for input query in browser.
+    Opens a Google search for the specified query in the web browser.
+
+    Args:
+        query (str): The search query to be sent to Google.
+
+    Returns:
+        None: This function only opens the search results in the browser.
     """
     speak("Searching on Google...")
+
+    # Open the Google search results page for the given query
     webbrowser.open(f"https://www.google.com/search?q={query}")
