@@ -41,7 +41,7 @@ VerbTone is an interactive AI assistant designed to perform various tasks such a
 ### Steps:
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YourUsername/VerbToneAI.git
+   git clone https://github.com/anushreejha/VerbToneAI.git
    cd VerbToneAI
    ```
 2. Install dependencies:
