@@ -10,8 +10,10 @@ google-api-python-client
 google-auth-httplib2
 torch
 tensorflow
-transformers
 scikit-learn
 pyttsx3   
 fer
-moviepy
+moviepy==1.0.3
+Flask==2.1.2
+beautifulsoup4
+python-dotenv==1.0.0
