@@ -78,12 +78,6 @@ VerbTone is an interactive AI assistant designed to perform various tasks such a
    docker run -p 5000:5000 verbtone-ai
    ```
 
-4. Access the application through the appropriate port (e.g., http://localhost:5000 for web-based interactions, if implemented).
-
-#### Docker Notes:
-- Ensure you have a `.dockerignore` file to exclude unnecessary files from the image.
-- Users will need to build the Docker image locally unless a pre-built image is pushed to a container registry (e.g., Docker Hub).
-
 ### Usage
 
 - Start the assistant by saying a greeting like "Hey VerbTone" or "Hello."
