@@ -1,10 +1,10 @@
-# VerbTone AI 
+## VerbTone AI
 
 VerbTone is an interactive AI assistant designed to perform various tasks such as voice-based interaction, providing real-time weather and news updates, managing time and dates, writing emails, and now enhanced with features like emotion detection and advanced NLP capabilities.
 
-## **Features**
+### Features
 
-### Core Functionalities:
+#### Core Functionalities:
 - **Wake-Word Detection**: Activates only when triggered by phrases like "Hey VerbTone," "Hello," or similar greetings.
 - **Weather Updates**: Provides real-time weather information powered by the OpenWeatherMap API.
 - **News Headlines**: Fetches the latest top news headlines from India Today by web scraping.
@@ -20,58 +20,80 @@ VerbTone is an interactive AI assistant designed to perform various tasks such a
   - Provide weather predictions.
   - Read out news headlines.
 
-### Advanced Features:
-- **Emotion Detection** (New):
+#### Advanced Features:
+- **Emotion Detection (New)**:
   - Detects user emotions through facial expressions or speech tone.
   - Customizes responses based on the detected emotional state (e.g., happy, angry, sad).
-- **Session Continuity** (New):
+- **Session Continuity (New)**:
   - Engages in continuous interaction without requiring repeated wake-word usage.
   - Automatically resets to listening for the wake word after 15 seconds of inactivity.
 - **Natural Language Processing (NLP)**:
   - Leverages Hugging Face’s GPT-2 for query understanding and intent classification, ensuring accurate and context-aware responses.
 
----
+### Installation Instructions
 
-## **Installation Instructions**
+#### Prerequisites:
+- Python 3.8 or higher.
+- Docker (optional, for running the application in a containerized environment).
+- To see the required libraries, refer to `requirements.txt`.
 
-### Prerequisites:
-1. Python 3.8 or higher.
-2. To see the required libraries, refer to `requirements.txt`.
+#### Steps:
 
-### Steps:
+**Option 1: Running Locally**
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/anushreejha/VerbToneAI.git
    cd VerbToneAI
    ```
+
 2. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-3. Obtain API key for weather data:
-   - Get an API key for [OpenWeatherMap](https://openweathermap.org/api).
+
+3. Obtain an API key for weather data:
+   - Get an API key for OpenWeatherMap.
 
 4. Run the application:
    ```bash
    python main.py
    ```
 
----
+**Option 2: Running with Docker**
 
-## **Usage**
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/anushreejha/VerbToneAI.git
+   cd VerbToneAI
+   ```
 
-1. Start the assistant by saying a greeting like "Hey VerbTone" or "Hello."
-2. Interact with the assistant using commands such as:
-   - "What's the weather like today?"
-   - "Tell me the latest news."
-   - "What time is it?"
-   - "Can you write an email for me?"
+2. Build the Docker image:
+   ```bash
+   docker build -t verbtone-ai .
+   ```
 
----
+3. Run the Docker container:
+   ```bash
+   docker run -p 5000:5000 verbtone-ai
+   ```
 
-## **Future Enhancements**
+4. Access the application through the appropriate port (e.g., http://localhost:5000 for web-based interactions, if implemented).
+
+#### Docker Notes:
+- Ensure you have a `.dockerignore` file to exclude unnecessary files from the image.
+- Users will need to build the Docker image locally unless a pre-built image is pushed to a container registry (e.g., Docker Hub).
+
+### Usage
+
+- Start the assistant by saying a greeting like "Hey VerbTone" or "Hello."
+- Interact with the assistant using commands such as:
+  - "What's the weather like today?"
+  - "Tell me the latest news."
+  - "What time is it?"
+  - "Can you write an email for me?"
+
+### Future Enhancements
+
 - Add support for multi-language interactions.
-- Enhance emotion detection to include more nuanced emotional states.
 - Expand integration with other APIs for advanced productivity tools.
-- Introduce conversational memory for better context retention.
-
