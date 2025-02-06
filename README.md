@@ -39,8 +39,6 @@ VerbTone is an interactive AI assistant designed to perform various tasks such a
 
 #### Steps:
 
-**Option 1: Running Locally**
-
 1. Clone the repository:
    ```bash
    git clone https://github.com/anushreejha/VerbToneAI.git
@@ -59,25 +57,7 @@ VerbTone is an interactive AI assistant designed to perform various tasks such a
    ```bash
    python main.py
    ```
-
-**Option 2: Running with Docker**
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/anushreejha/VerbToneAI.git
-   cd VerbToneAI
-   ```
-
-2. Build the Docker image:
-   ```bash
-   docker build -t verbtone-ai .
-   ```
-
-3. Run the Docker container:
-   ```bash
-   docker run -p 5000:5000 verbtone-ai
-   ```
-
+   
 ### Usage
 
 - Start the assistant by saying a greeting like "Hey VerbTone" or "Hello."
@@ -86,8 +66,3 @@ VerbTone is an interactive AI assistant designed to perform various tasks such a
   - "Tell me the latest news."
   - "What time is it?"
   - "Can you write an email for me?"
-
-### Future Enhancements
-
-- Add support for multi-language interactions.
-- Expand integration with other APIs for advanced productivity tools.
